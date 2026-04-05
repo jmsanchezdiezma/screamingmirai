@@ -1,7 +1,7 @@
 ---
 title: "Phase 5: UI — Crawl Form & Progress"
 description: "Build the crawl input form, progress bar, and real-time status display"
-status: pending
+status: completed
 priority: P1
 effort: 4h
 branch: feature/ui-crawl-form
@@ -456,12 +456,12 @@ app/
 
 ## Success Criteria
 
-- [ ] URL input validates URLs
-- [ ] Start button triggers crawl
-- [ ] Progress bar updates in real-time
-- [ ] Stop button aborts crawl
-- [ ] Summary shows after completion
-- [ ] All files under 200 lines
+- [x] URL input validates URLs
+- [x] Start button triggers crawl
+- [x] Progress bar updates in real-time
+- [x] Stop button aborts crawl
+- [x] Summary shows after completion
+- [x] All files under 200 lines
 
 ## Risk Assessment
 

@@ -1,7 +1,7 @@
 ---
 title: "Phase 1: Project Scaffolding & Git Setup"
 description: "Initialize Next.js project with TypeScript, Tailwind, shadcn/ui, Git branching, CI base"
-status: pending
+status: completed
 priority: P1
 effort: 4h
 branch: feature/scaffolding
@@ -308,12 +308,12 @@ screaming-web/
 
 ## Success Criteria
 
-- [ ] Next.js app runs on `localhost:3000`
-- [ ] shadcn/ui components render correctly
-- [ ] TypeScript compiles without errors
-- [ ] CI workflow passes on push
-- [ ] Project structure matches spec
-- [ ] All files under 200 lines
+- [x] Next.js app runs on `localhost:3000`
+- [x] shadcn/ui components render correctly
+- [x] TypeScript compiles without errors
+- [x] CI workflow passes on push
+- [x] Project structure matches spec
+- [x] All files under 200 lines
 
 ## Risk Assessment
 

@@ -1,7 +1,7 @@
 ---
 title: "Phase 3: Hybrid Fetch & robots.txt"
 description: "Add Playwright fallback for JS pages and robots.txt respect"
-status: pending
+status: completed
 priority: P1
 effort: 5h
 branch: feature/hybrid-fetch
@@ -357,14 +357,14 @@ crawler/
 
 ## Success Criteria
 
-- [ ] Hybrid fetch uses Cheerio for static pages
-- [ ] Playwright launches for JS-rendered pages
-- [ ] Browser singleton works across multiple pages
-- [ ] robots.txt is fetched and parsed
-- [ ] Disallowed URLs are skipped
-- [ ] Crawl-delay is respected
-- [ ] Browser closes on SIGTERM
-- [ ] All files under 200 lines
+- [x] Hybrid fetch uses Cheerio for static pages
+- [x] Playwright launches for JS-rendered pages
+- [x] Browser singleton works across multiple pages
+- [x] robots.txt is fetched and parsed
+- [x] Disallowed URLs are skipped
+- [x] Crawl-delay is respected
+- [x] Browser closes on SIGTERM
+- [x] All files under 200 lines
 
 ## Risk Assessment
 

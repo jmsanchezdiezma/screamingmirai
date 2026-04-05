@@ -1,7 +1,7 @@
 ---
 title: "Phase 7: Export & In-Memory Store"
 description: "Implement CSV/JSON export and optimize in-memory session storage"
-status: pending
+status: completed
 priority: P1
 effort: 4h
 branch: feature/export-store
@@ -325,12 +325,12 @@ store/
 
 ## Success Criteria
 
-- [ ] CSV export works with proper escaping
-- [ ] JSON export is formatted and readable
-- [ ] Filename includes domain and date
-- [ ] Export handles filtered results
-- [ ] Old sessions auto-delete after 1 hour
-- [ ] All files under 200 lines
+- [x] CSV export works with proper escaping
+- [x] JSON export is formatted and readable
+- [x] Filename includes domain and date
+- [x] Export handles filtered results
+- [x] Old sessions auto-delete after 1 hour
+- [x] All files under 200 lines
 
 ## Risk Assessment
 

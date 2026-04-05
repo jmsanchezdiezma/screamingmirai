@@ -1,7 +1,7 @@
 ---
 title: "Phase 4: API Routes & SSE Streaming"
 description: "Create Next.js API routes with Server-Sent Events for real-time crawl progress"
-status: pending
+status: completed
 priority: P1
 effort: 5h
 branch: feature/api-streaming
@@ -412,13 +412,13 @@ store/
 
 ## Success Criteria
 
-- [ ] POST `/api/crawl` starts crawl and streams SSE
-- [ ] Client receives page events in real-time
-- [ ] Session is stored in memory
-- [ ] GET `/api/crawl/[id]` returns status
-- [ ] POST `/api/crawl/[id]/stop` aborts crawl
-- [ ] GET `/api/crawl/[id]/results` returns paginated results
-- [ ] All files under 200 lines
+- [x] POST `/api/crawl` starts crawl and streams SSE
+- [x] Client receives page events in real-time
+- [x] Session is stored in memory
+- [x] GET `/api/crawl/[id]` returns status
+- [x] POST `/api/crawl/[id]/stop` aborts crawl
+- [x] GET `/api/crawl/[id]/results` returns paginated results
+- [x] All files under 200 lines
 
 ## Risk Assessment
 

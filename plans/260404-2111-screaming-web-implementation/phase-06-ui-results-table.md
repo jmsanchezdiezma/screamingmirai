@@ -1,7 +1,7 @@
 ---
 title: "Phase 6: UI — Results Table"
 description: "Build sortable, filterable, paginated results table with TanStack Table + shadcn/ui"
-status: pending
+status: completed
 priority: P1
 effort: 5h
 branch: feature/ui-results-table
@@ -401,11 +401,12 @@ lib/
 
 ## Success Criteria
 
-- [ ] Table displays all crawled results
-- [ ] Search filters by URL/title
-- [ ] Pagination works correctly
-- [ ] Export button present (handler in Phase 7)
-- [ ] All files under 200 lines
+- [x] Table displays all crawled results
+- [x] Search filters by URL/title
+- [x] Pagination works correctly
+- [x] Export button present
+- [x] All files under 200 lines
+- [x] Sortable columns (DataTableColumnHeader)
 
 ## Risk Assessment
 

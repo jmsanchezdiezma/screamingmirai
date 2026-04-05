@@ -33,18 +33,18 @@ Build a browser-based SEO crawler (mini Screaming Frog) using Next.js App Router
 
 | Phase | Version | Status | Description | Branch |
 |-------|---------|--------|-------------|--------|
-| [Phase 1](./phase-01-project-scaffolding.md) | v0.1.0 | pending | Project scaffolding, Git setup, CI, React Query | `feature/scaffolding` |
-| [Phase 2](./phase-02-bfs-crawler-core.md) | v0.2.0 | pending | BFS crawler core (queue, visited, fetcher, parser) | `feature/bfs-crawler` |
-| [Phase 3](./phase-03-api-streaming.md) | v0.3.0 | pending | API routes + SSE streaming (Cheerio-only) | `feature/api-streaming` |
-| [Phase 4](./phase-04-ui-crawl-form.md) | v0.4.0 | pending | UI — Crawl form + progress bar + results table | `feature/ui-crawl-form` |
-| [Phase 5](./phase-05-hybrid-fetch-robots.md) | v0.5.0 | pending | Hybrid fetch (Playwright fallback) + robots.txt | `feature/hybrid-fetch` |
-| [Phase 6](./phase-06-ui-results-table.md) | v0.6.0 | pending | UI — Results table + export (CSV/JSON) | `feature/ui-results-table` |
-| [Phase 7](./phase-07-export-store.md) | v0.7.0 | pending | Export (CSV/JSON) + in-memory store cleanup | `feature/export-store` |
+| [Phase 1](./phase-01-project-scaffolding.md) | v0.1.0 | completed | Project scaffolding, Git setup, CI, React Query | `feature/scaffolding` |
+| [Phase 2](./phase-02-bfs-crawler-core.md) | v0.2.0 | completed | BFS crawler core (queue, visited, fetcher, parser) | `feature/bfs-crawler` |
+| [Phase 3](./phase-03-hybrid-fetch-robots.md) | v0.3.0 | completed | Hybrid fetch (Playwright fallback) + robots.txt | `feature/hybrid-fetch` |
+| [Phase 4](./phase-04-api-streaming.md) | v0.4.0 | completed | API routes + SSE streaming (Cheerio-only) | `feature/api-streaming` |
+| [Phase 5](./phase-05-ui-crawl-form.md) | v0.5.0 | completed | UI — Crawl form + progress bar | `feature/ui-crawl-form` |
+| [Phase 6](./phase-06-ui-results-table.md) | v0.6.0 | completed | UI — Results table + export (CSV/JSON) | `feature/ui-results-table` |
+| [Phase 7](./phase-07-export-store.md) | v0.7.0 | completed | Export (CSV/JSON) + in-memory store cleanup | `feature/export-store` |
 | [Phase 8](./phase-08-docker-dokploy.md) | v0.8.0 | pending | Docker + docker-compose + Dokploy config | `feature/docker-dokploy` |
 | [Phase 9](./phase-09-testing-polish.md) | v0.9.0 | pending | Testing + polish + README | `feature/testing-polish` |
 | Release | v1.0.0 | pending | First production release | `main` |
 
-> **Note:** Phases reordered from original. API (Phase 3) now comes before Playwright (Phase 5) to enable full-stack testing earlier. See [validation-report.md](./validation-report.md) for details.
+> **Note:** Phases reordered from original. API (Phase 4) now comes before Playwright (Phase 3) to enable full-stack testing earlier. See [validation-report.md](./validation-report.md) for details.
 
 ## Branching Strategy
 
@@ -96,6 +96,4 @@ v0.1.0         v0.2.0         v0.3.0         v0.4.0         v0.5.0
 
 ## Next Steps
 
-1. Review and approve Phase 1
-2. Create `feature/scaffolding` branch
-3. Begin implementation
+1. Begin Phase 8 (Docker + docker-compose + Dokploy config)

@@ -1,0 +1,12 @@
+# ScreamingWeb docker-compose — Full implementation in Phase 8
+services:
+  screaming-web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: screaming-web
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped

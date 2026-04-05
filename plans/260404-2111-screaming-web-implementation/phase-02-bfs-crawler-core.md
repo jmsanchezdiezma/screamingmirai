@@ -1,7 +1,7 @@
 ---
 title: "Phase 2: BFS Crawler Core"
 description: "Implement BFS crawler with queue, visited set, fetcher, and Cheerio parser"
-status: pending
+status: completed
 priority: P1
 effort: 6h
 branch: feature/bfs-crawler
@@ -393,14 +393,14 @@ crawler/
 
 ## Success Criteria
 
-- [ ] BFS crawler visits URLs in depth order
-- [ ] URL normalization prevents duplicates
-- [ ] Extension blocking skips non-HTML files
-- [ ] Cheerio extracts title, canonical, meta robots
-- [ ] Link extraction finds internal/external links
-- [ ] Generator yields results as they're crawled
-- [ ] All files under 200 lines
-- [ ] Unit tests pass
+- [x] BFS crawler visits URLs in depth order
+- [x] URL normalization prevents duplicates
+- [x] Extension blocking skips non-HTML files
+- [x] Cheerio extracts title, canonical, meta robots
+- [x] Link extraction finds internal/external links
+- [x] Generator yields results as they're crawled
+- [x] All files under 200 lines
+- [x] Unit tests pass
 
 ## Risk Assessment
 
