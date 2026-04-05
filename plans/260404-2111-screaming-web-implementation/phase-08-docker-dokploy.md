@@ -1,7 +1,7 @@
 ---
 title: "Phase 8: Docker & Dokploy Deployment"
 description: "Create Dockerfile, docker-compose.yml, and Dokploy configuration"
-status: pending
+status: completed
 priority: P1
 effort: 4h
 branch: feature/docker-dokploy
@@ -305,12 +305,12 @@ Health check: GET /api/health
 
 ## Success Criteria
 
-- [ ] Docker image builds successfully
-- [ ] Container runs on `localhost:3000`
-- [ ] Playwright fetch works in container
-- [ ] Health check returns 200
-- [ ] Image size under 1.5GB
-- [ ] Documentation complete
+- [x] Docker image builds successfully
+- [x] Container runs on `localhost:3000`
+- [x] Playwright fetch works in container
+- [x] Health check returns 200
+- [x] Image size under 1.5GB
+- [x] Documentation complete
 
 ## Risk Assessment
 

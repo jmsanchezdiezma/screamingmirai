@@ -40,7 +40,7 @@ Build a browser-based SEO crawler (mini Screaming Frog) using Next.js App Router
 | [Phase 5](./phase-05-ui-crawl-form.md) | v0.5.0 | completed | UI — Crawl form + progress bar | `feature/ui-crawl-form` |
 | [Phase 6](./phase-06-ui-results-table.md) | v0.6.0 | completed | UI — Results table + export (CSV/JSON) | `feature/ui-results-table` |
 | [Phase 7](./phase-07-export-store.md) | v0.7.0 | completed | Export (CSV/JSON) + in-memory store cleanup | `feature/export-store` |
-| [Phase 8](./phase-08-docker-dokploy.md) | v0.8.0 | pending | Docker + docker-compose + Dokploy config | `feature/docker-dokploy` |
+| [Phase 8](./phase-08-docker-dokploy.md) | v0.8.0 | completed | Docker + docker-compose + Dokploy config | `feature/docker-dokploy` |
 | [Phase 9](./phase-09-testing-polish.md) | v0.9.0 | pending | Testing + polish + README | `feature/testing-polish` |
 | Release | v1.0.0 | pending | First production release | `main` |
 
@@ -96,4 +96,4 @@ v0.1.0         v0.2.0         v0.3.0         v0.4.0         v0.5.0
 
 ## Next Steps
 
-1. Begin Phase 8 (Docker + docker-compose + Dokploy config)
+1. Begin Phase 9 (Testing + polish + README)
