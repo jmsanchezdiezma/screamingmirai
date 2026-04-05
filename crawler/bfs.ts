@@ -30,6 +30,7 @@ export async function* crawlGenerator(
 
   const visited = new Set<string>();
   const queued = new Set<string>([seedNormalized]);
+  const yielded = new Set<string>();
 
   // Fetch robots.txt once per crawl if enabled
   const robots = config.respectRobotsTxt
@@ -45,6 +46,7 @@ export async function* crawlGenerator(
       for (const url of sitemapResult.urls) {
         const normalized = normalizeUrl(url);
         if (
+          !visited.has(normalized) &&
           !queued.has(normalized) &&
           isSameDomain(normalized, seedDomain) &&
           !isBlockedExtension(normalized, config.blockedExtensions) &&
@@ -88,6 +90,13 @@ export async function* crawlGenerator(
     if (!fetchResult) continue;
 
     const parsed = parseHtml(fetchResult, item.depth, seedDomain);
+
+    // Don't yield the same URL twice
+    if (yielded.has(normalized)) {
+      console.error(`[DUPLICATE] Already yielded: ${normalized}`);
+      continue;
+    }
+    yielded.add(normalized);
 
     yield parsed;
 
