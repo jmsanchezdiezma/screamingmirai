@@ -32,6 +32,9 @@ export async function* crawlGenerator(
   const queued = new Set<string>([seedNormalized]);
   const yielded = new Set<string>();
 
+  // Track URL discovery count to debug duplicates
+  const discoveryCount = new Map<string, number>();
+
   // Fetch robots.txt once per crawl if enabled
   const robots = config.respectRobotsTxt
     ? await fetchRobotsTxt(config.seedUrl, config.userAgent)
@@ -65,9 +68,19 @@ export async function* crawlGenerator(
     const item = queue.shift()!;
     const normalized = normalizeUrl(item.url);
 
-    if (visited.has(normalized)) continue;
+    // Debug: check if URL was discovered multiple times
+    const prevCount = discoveryCount.get(normalized) ?? 0;
+    discoveryCount.set(normalized, prevCount + 1);
+    if (prevCount > 0) {
+      console.error(`[MULTI-DISCOVERY] ${normalized} discovered ${prevCount + 1} times`);
+    }
+
+    if (visited.has(normalized)) {
+      console.error(`[ALREADY VISITED] ${normalized}`);
+      continue;
+    }
     if (yielded.has(normalized)) {
-      console.error(`[YIELDED AGAIN] ${normalized}`);
+      console.error(`[ALREADY YIELDED] ${normalized}`);
       continue;
     }
     if (item.depth > config.maxDepth) continue;
