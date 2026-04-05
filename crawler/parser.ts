@@ -1,6 +1,11 @@
 import * as cheerio from "cheerio";
 import type { FetchResult, ParsedResult } from "./types";
-import { normalizeUrl, getDomain, resolveUrl } from "./url-utils";
+import {
+  normalizeUrl,
+  getDomain,
+  isWhitespaceOnlyHref,
+  resolveUrl,
+} from "./url-utils";
 
 /**
  * Parse HTML content with Cheerio. Extracts SEO metadata and links.
@@ -25,7 +30,7 @@ export function parseHtml(
 
   $("a[href]").each((_, el) => {
     const href = $(el).attr("href");
-    if (!href) return;
+    if (!href || isWhitespaceOnlyHref(href)) return;
 
     // Skip non-HTTP protocols
     if (
@@ -57,7 +62,7 @@ export function parseHtml(
   $('link[rel="alternate"][hreflang]').each((_, el) => {
     const hreflangCode = $(el).attr("hreflang")?.trim();
     const hrefRaw = $(el).attr("href");
-    if (hreflangCode && hrefRaw) {
+    if (hreflangCode && hrefRaw && !isWhitespaceOnlyHref(hrefRaw)) {
       const resolved = resolveUrl(hrefRaw, result.url);
       if (resolved) {
         hreflang.push({ lang: hreflangCode, href: resolved });

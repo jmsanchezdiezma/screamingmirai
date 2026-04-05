@@ -61,6 +61,16 @@ describe("parseHtml", () => {
     expect(result.internalLinks).toHaveLength(0);
   });
 
+  it("skips whitespace-only encoded links", () => {
+    const blankHtml: FetchResult = {
+      ...baseHtml,
+      html: '<html><body><a href="%20">Blank</a><a href="/%20">Blank2</a></body></html>',
+    };
+    const result = parseHtml(blankHtml, 0, "example.com");
+    expect(result.internalLinks).toHaveLength(0);
+    expect(result.externalLinks).toHaveLength(0);
+  });
+
   it("handles missing title", () => {
     const noTitle: FetchResult = {
       ...baseHtml,

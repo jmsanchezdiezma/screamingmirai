@@ -60,6 +60,21 @@ export function resolveUrl(href: string, baseUrl: string): string | null {
   }
 }
 
+/**
+ * Detect href values that are effectively empty/whitespace-only after decoding.
+ * This filters malformed links like "%20" or "/%20" that should not become crawlable URLs.
+ */
+export function isWhitespaceOnlyHref(href: string): boolean {
+  const trimmed = href.trim();
+  if (!trimmed) return true;
+
+  try {
+    return decodeURIComponent(trimmed).replace(/[\/?#&=]+/g, " ").trim() === "";
+  } catch {
+    return false;
+  }
+}
+
 /** Check if a content-type header indicates HTML */
 export function isHtmlContentType(contentType: string | null): boolean {
   if (!contentType) return false;

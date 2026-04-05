@@ -5,6 +5,7 @@ import {
   isSameDomain,
   isBlockedExtension,
   resolveUrl,
+  isWhitespaceOnlyHref,
   isHtmlContentType,
   isPrivateHostname,
   isSafeUrl,
@@ -116,6 +117,23 @@ describe("resolveUrl", () => {
 
   it("returns null for invalid base", () => {
     expect(resolveUrl("/page", "")).toBeNull();
+  });
+});
+
+describe("isWhitespaceOnlyHref", () => {
+  it("returns true for empty hrefs", () => {
+    expect(isWhitespaceOnlyHref("")).toBe(true);
+    expect(isWhitespaceOnlyHref("   ")).toBe(true);
+  });
+
+  it("returns true for encoded whitespace links", () => {
+    expect(isWhitespaceOnlyHref("%20")).toBe(true);
+    expect(isWhitespaceOnlyHref("/%20")).toBe(true);
+  });
+
+  it("returns false for normal paths", () => {
+    expect(isWhitespaceOnlyHref("/page")).toBe(false);
+    expect(isWhitespaceOnlyHref("/foo%20bar")).toBe(false);
   });
 });
 
