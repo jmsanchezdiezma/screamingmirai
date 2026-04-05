@@ -65,7 +65,15 @@ export async function* crawlGenerator(
     const item = queue.shift()!;
     const normalized = normalizeUrl(item.url);
 
-    if (visited.has(normalized)) continue;
+    // Skip if already visited (should never happen with proper deduplication)
+    if (visited.has(normalized)) {
+      console.error(`[VISITED AGAIN] ${normalized}`);
+      continue;
+    }
+    if (yielded.has(normalized)) {
+      console.error(`[YIELDED AGAIN] ${normalized}`);
+      continue;
+    }
     if (item.depth > config.maxDepth) continue;
     if (config.sameDomainOnly && !isSameDomain(normalized, seedDomain)) continue;
     if (isBlockedExtension(normalized, config.blockedExtensions)) continue;
@@ -76,6 +84,8 @@ export async function* crawlGenerator(
     // robots.txt check
     if (robots && !robots.isAllowed(normalized)) continue;
 
+    // Mark as yielded BEFORE fetching to prevent race conditions
+    yielded.add(normalized);
     visited.add(normalized);
     queued.delete(normalized);
 
