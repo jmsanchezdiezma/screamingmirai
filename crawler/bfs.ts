@@ -35,6 +35,8 @@ export async function* crawlGenerator(
   // Track URL discovery count to debug duplicates
   const discoveryCount = new Map<string, number>();
 
+  console.log(`[CRAWL START] Seed: ${config.seedUrl}, MaxDepth: ${config.maxDepth}, MaxPages: ${config.maxPages}`);
+
   // Fetch robots.txt once per crawl if enabled
   const robots = config.respectRobotsTxt
     ? await fetchRobotsTxt(config.seedUrl, config.userAgent)
