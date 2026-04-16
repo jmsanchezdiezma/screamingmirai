@@ -5,9 +5,6 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Mirai Go — ScreamingWeb",
   description: "Rastreador SEO corporativo para descubrir URLs internas y rastrear webs multidioma.",
-  icons: {
-    icon: "/logo-mirai-go-sin-fondo.webp",
-  },
 };
 
 export default function RootLayout({
