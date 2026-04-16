@@ -18,7 +18,7 @@ export const columns: ColumnDef<CrawlResult>[] = [
           href={url}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-primary hover:underline truncate max-w-[300px] block"
+          className="text-foreground hover:underline truncate max-w-[300px] block"
         >
           {url}
         </a>

@@ -3,14 +3,13 @@
 import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { FileJson, FileSpreadsheet, ClipboardCopy, Check } from "lucide-react";
+import { FileSpreadsheet, ClipboardCopy, Check } from "lucide-react";
 
 export function TableToolbar({
   search,
   onSearchChange,
   resultCount,
   onExportCsv,
-  onExportJson,
   onCopyUrls,
   filters,
 }: {
@@ -18,7 +17,6 @@ export function TableToolbar({
   onSearchChange: (value: string) => void;
   resultCount: number;
   onExportCsv: () => void;
-  onExportJson: () => void;
   onCopyUrls: () => Promise<void>;
   filters?: React.ReactNode;
 }) {
@@ -54,10 +52,6 @@ export function TableToolbar({
           <Button onClick={onExportCsv} variant="outline" size="sm">
             <FileSpreadsheet className="h-4 w-4 mr-1" />
             CSV
-          </Button>
-          <Button onClick={onExportJson} variant="outline" size="sm">
-            <FileJson className="h-4 w-4 mr-1" />
-            JSON
           </Button>
         </div>
       </div>

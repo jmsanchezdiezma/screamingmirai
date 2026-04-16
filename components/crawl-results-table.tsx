@@ -32,7 +32,7 @@ export function CrawlResultsTable({
   const [statusFilter, setStatusFilter] = useState<number | null>(null);
   const [indexableFilter, setIndexableFilter] = useState<boolean | null>(null);
   const [langFilter, setLangFilter] = useState<string | null>(null);
-  const { exportCsv, exportJson } = useExport(seedUrl);
+  const { exportCsv } = useExport(seedUrl);
 
   const uniqueStatuses = useMemo(
     () => [...new Set(results.map((r) => r.status))].sort((a, b) => a - b),
@@ -112,7 +112,6 @@ export function CrawlResultsTable({
           }}
           resultCount={filteredData.length}
           onExportCsv={() => exportCsv(filteredData)}
-          onExportJson={() => exportJson(filteredData)}
           onCopyUrls={handleCopyUrls}
           filters={
             <TableFilters

@@ -1,17 +1,5 @@
 import type { CrawlResult } from "@/lib/types";
 
-export function exportAsJson(results: CrawlResult[]): string {
-  return JSON.stringify(
-    {
-      exportedAt: new Date().toISOString(),
-      total: results.length,
-      results,
-    },
-    null,
-    2,
-  );
-}
-
 export function exportAsCsv(results: CrawlResult[]): string {
   const BOM = "\uFEFF";
   const headers = [
@@ -73,7 +61,7 @@ export function downloadFile(
 
 export function generateExportFilename(
   seedUrl: string,
-  format: "csv" | "json",
+  format: "csv",
 ): string {
   let domain = "export";
   try {

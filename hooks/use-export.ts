@@ -2,7 +2,6 @@
 
 import { useCallback } from "react";
 import {
-  exportAsJson,
   exportAsCsv,
   downloadFile,
   generateExportFilename,
@@ -10,15 +9,6 @@ import {
 import type { CrawlResult } from "@/lib/types";
 
 export function useExport(seedUrl: string) {
-  const exportJson = useCallback(
-    (results: CrawlResult[]) => {
-      const content = exportAsJson(results);
-      const filename = generateExportFilename(seedUrl, "json");
-      downloadFile(content, filename, "application/json");
-    },
-    [seedUrl],
-  );
-
   const exportCsv = useCallback(
     (results: CrawlResult[]) => {
       const content = exportAsCsv(results);
@@ -28,5 +18,5 @@ export function useExport(seedUrl: string) {
     [seedUrl],
   );
 
-  return { exportJson, exportCsv };
+  return { exportCsv };
 }
